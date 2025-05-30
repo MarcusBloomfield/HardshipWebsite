@@ -11,16 +11,14 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
     
     <!-- Preconnect for performance and security -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
-    <!-- External Resources with Integrity -->
+    <!-- External Resources -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
     <style>
         :root {
@@ -431,14 +429,15 @@
 
         .steam-icon {
             margin-left: 8px;
-            font-size: 1.3em;
-            color: #66c0f4;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
             transition: all 0.3s ease;
         }
 
         .steam-link:hover .steam-icon {
             transform: scale(1.1);
-            color: #4aa3d9;
         }
 
         @media (max-width: 768px) {
@@ -503,7 +502,7 @@
             <p>Grounded Survival City Builder</p>
             <br/>
             <a href="https://store.steampowered.com/app/1334570?utm_source=Website" class="steam-link" target="_blank" rel="noopener noreferrer" style="margin: 0 auto; display: block; border: 0px;">
-               Wishlist now on Steam! <i class="fab fa-steam steam-icon" style="padding: 10px;"></i>
+                Wishlist now on Steam! <img src="Pictures/Steam_icon_logo.svg.png" alt="Steam" class="steam-icon">
             </a>
         </div>
     </header>
@@ -673,13 +672,19 @@
 
     <section class="footer-section">
         <div class="container">
-            <p>This is just the beginning. I have big plans for continued development, community feedback, and meaningful updates as the game grows.</p>
-            <p><strong>Thank you for checking out Hardship, and I hope you enjoy building your own story of resilience, growth, and survival.</strong></p>
+            <div class="description-text">
+                <p>Thank you for checking out Hardship, and I hope you enjoy building your own story of resilience, growth, and survival.</p>
+            </div>
+            <a href="https://store.steampowered.com/app/1334570?utm_source=Website" class="steam-link" target="_blank" rel="noopener noreferrer">
+                Wishlist now on Steam! <img src="Pictures/Steam_icon_logo.svg.png" alt="Steam" class="steam-icon">
+            </a>
         </div>
         <br/>
-        <a href="https://store.steampowered.com/app/1334570?utm_source=Website" class="steam-link" target="_blank" rel="noopener noreferrer">
-           Wishlist now on Steam! <i class="fab fa-steam steam-icon" style="padding: 10px;"></i>
-        </a>
+        <div class="container" style="display: flex; justify-content: center; flex-direction: row; align-items: center; gap: 10px;">
+            <a href="https://github.com/NDISCOVER/Cinzel" class="blog-post-link">Font</a>
+            <a href="https://marcusbloomfield.github.io/HardshipWebsite/PrivacyPolicy" class="blog-post-link">Privacy Policy</a>
+            <a href="https://marcusbloomfield.github.io/HardshipWebsite/License" class="blog-post-link">License</a>
+        </div>
     </section>
 </body>
 </html>
