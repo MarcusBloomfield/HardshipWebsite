@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardship - Survival Town Builder</title>
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+    
+    <!-- Preconnect for performance and security -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- External Resources with Integrity -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <style>
+        :root {
+            font-size: 16px;
+            --primary-bg: rgb(32, 32, 39);
+            --secondary-bg: rgb(57, 57, 70);
+            --text-color: rgb(255, 255, 255);
+            --border-color: rgb(97, 89, 73);
+            --accent-color: rgb(97, 89, 73);
+            --black-color: rgb(0, 0, 0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--black-color);
+            max-width: 1250px;
+            margin: 5vh auto;
+            border: 2px solid var(--border-color);  
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-color);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 3px solid var(--border-color);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 5rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            color: var(--text-color);
+            letter-spacing: 0.2rem;
+            position: relative;
+        }
+
+        header p {
+            font-size: 1.6rem;
+            opacity: 0.95;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.05rem;
+        }
+
+        .hero-section {
+            background: var(--secondary-bg);
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            margin-bottom: 2rem;
+        }
+
+        .game-description {background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .game-description h2 {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .description-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .features-section {
+            background: var(--secondary-bg);
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .features-section h2 {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: var(--primary-bg);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: var(--secondary-bg);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .dev-blog-section {
+            background: var(--primary-bg);
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dev-blog-section h2 {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-post {
+            background: linear-gradient(135deg, var(--secondary-bg), var(--primary-bg));
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .blog-post-date {
+            color: var(--border-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+        }
+
+        .blog-post-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-post-excerpt {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .blog-post-link {
+            display: inline-block;
+            background: var(--primary-bg);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post-link:hover {
+            background: var(--secondary-bg);
+            transform: translateY(-2px);
+        }
+
+        .steam-news-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .steam-news-button {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-color);
+            border: 2px solid var(--border-color);
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .steam-news-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-section {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            padding: 3rem 0;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            background: var(--secondary-bg);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, var(--primary-bg));
+            color: var(--text-color);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item .overlay h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section {
+            background: linear-gradient(180deg, var(--secondary-bg),  var(--primary-bg));
+            color: var(--text-color);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .footer-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .footer-section strong {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        /* Button-like styling for interactive elements */
+        .button-style {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button-style:hover {
+            background-color: var(--secondary-bg);
+        }
+
+        .steam-link {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-color);
+            border: 2px solid var(--border-color);
+            padding: 18px 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: 90%;
+            max-width: 400px;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .steam-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(97, 89, 73, 0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .steam-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border-color: rgba(97, 89, 73, 0.8);
+        }
+
+        .steam-icon {
+            margin-left: 8px;
+            font-size: 1.3em;
+            color: #66c0f4;
+            transition: all 0.3s ease;
+        }
+
+        .steam-link:hover .steam-icon {
+            transform: scale(1.1);
+            color: #4aa3d9;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body{
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: .8;
+            overflow: hidden;
+        }
+
+        .background-grid {
+            display: flex;
+            flex-direction: row;
+            flex-basis: 100%;
+            gap: 5px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .background-grid img {
+            width: 11%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+             </div>
+            <h1>HARDSHIP</h1>
+            <p>Grounded Survival City Builder</p>
+            <br/>
+            <a href="https://store.steampowered.com/app/1334570?utm_source=Website" class="steam-link" target="_blank" rel="noopener noreferrer" style="margin: 0 auto; display: block; border: 0px;">
+               Wishlist now on Steam! <i class="fab fa-steam steam-icon" style="padding: 10px;"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="background-image">
+        <div class="background-grid">
+            <img src="Pictures/People.PNG" alt="Citizens and People Management">
+            <img src="Pictures/FARMS.PNG" alt="Farming and Agriculture">
+            <img src="Pictures/BuildingCreator.PNG" alt="Building Creation Tool">
+            <img src="Pictures/SomeHouses.PNG" alt="Town Housing">
+            <img src="Pictures/MOOOON.PNG" alt="Night Cycle">
+            <img src="Pictures/Forest.PNG" alt="Forest Environment">
+            <img src="Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
+            <img src="Pictures/Planet.PNG" alt="World View">
+            <img src="Pictures/Mountain.PNG" alt="Mountain Landscape">
+        </div>
+    </div>
+    
+    <section class="hero-section">
+       <div class="description-text">
+            <p>Hardship is a survival-focused town builder where every choice matters. Gather resources, craft tools, manage citizens' needs, and battle the elements in a dynamic world.</p>
+        </div>
+        <div class="container">
+            <img src="Pictures/BIGHOUSE.PNG" alt="Hardship Main Building" class="hero-image">
+        </div>
+    </section>
+
+    <section class="game-description">
+        <div class="container">
+            <h2>About This Game</h2>
+            <div class="description-text">
+                <p>Hardship is a grounded, survival-focused town builder built by a solo developer, where managing people and resources is just as important as expanding your settlement. You'll gather materials, craft tools and buildings, and deal with the daily needs of your citizens—hunger, fatigue, weather, and more.</p>
+                <br>
+                <p>Every system ties into your town's ability to survive and grow, all within a changing environment that keeps you thinking ahead.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🏔️ Survival Mechanics</h3>
+                    <p>Your citizens must battle the elements and their own needs. Hunger, thirst, fatigue, and exposure to harsh temperatures will directly affect their health, morale, and productivity. Keeping them alive is as important as expanding your town.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⛏️ Resource Gathering</h3>
+                    <p>Collect vital materials like wood, stone, food, and more. These resources are the backbone of your settlement and must be managed wisely to sustain your population and support construction efforts.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔨 Crafting & Building System</h3>
+                    <p>Build everything from basic shelters and cooking stations to advanced workshops. A robust crafting system lets you shape your town's development according to your strategy and playstyle.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏘️ Town-Building & Management</h3>
+                    <p>Plan your settlement layout, assign roles to citizens, and manage their tasks. A strong infrastructure and well-organized workforce are key to survival and expansion.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌅 Dynamic Environment</h3>
+                    <p>A shifting day/night cycle and an approaching winter add a layer of strategy. Prepare for the cold and adapt your routines to the world around you.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎒 Citizen Inventory System</h3>
+                    <p>Equip your townspeople with gear and tools—from headgear to hammers. A well-equipped citizen is not only more productive but stands a better chance against the elements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Game Screenshots</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Pictures/People.PNG" alt="Citizens and People Management">
+                    <div class="overlay">
+                        <h4>Citizen Management</h4>
+                        <p>Manage your townspeople and their daily needs</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pictures/FARMS.PNG" alt="Farming and Agriculture">
+                    <div class="overlay">
+                        <h4>Agriculture System</h4>
+                        <p>Grow crops to feed your growing settlement</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pictures/SomeHouses.PNG" alt="Town Housing">
+                    <div class="overlay">
+                        <h4>Housing Development</h4>
+                        <p>Build homes to shelter your citizens</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pictures/BuildingCreator.PNG" alt="Building Creation Tool">
+                    <div class="overlay">
+                        <h4>Building System</h4>
+                        <p>Design and construct various structures</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pictures/Forest.PNG" alt="Forest Environment">
+                    <div class="overlay">
+                        <h4>Natural Resources</h4>
+                        <p>Gather wood and materials from forests</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pictures/Mountain.PNG" alt="Mountain Landscape">
+                    <div class="overlay">
+                        <h4>Varied Terrain</h4>
+                        <p>Explore different landscapes and environments</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
+                    <div class="overlay">
+                        <h4>Scenic Views</h4>
+                        <p>Beautiful landscapes surround your settlement</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pictures/Planet.PNG" alt="World View">
+                    <div class="overlay">
+                        <h4>World Overview</h4>
+                        <p>Plan your expansion across the land</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pictures/MOOOON.PNG" alt="Night Cycle">
+                    <div class="overlay">
+                        <h4>Day/Night Cycle</h4>
+                        <p>Adapt to changing conditions throughout the day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dev-blog-section">
+        <div class="container">
+            <h2>Development Blog</h2>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <div class="blog-post-date">Fri, May 30, 2025</div>
+                    <div class="blog-post-title">Visual Rework</div>
+                    <div class="blog-post-excerpt">I've been working on refining the visual style of my city-building game, and I've decided to transition to a cleaner, orthographic-ish look. This update brings a sharper and more structured visual idea to my game whilst maintaining some depth.</div>
+                    <a href="https://store.steampowered.com/news/app/1334570/view/509581849759057424" class="blog-post-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                </div>
+                
+                <div class="blog-post">
+                    <div class="blog-post-date">Sat, May 17, 2025</div>
+                    <div class="blog-post-title">It Begins!</div>
+                    <div class="blog-post-excerpt">I'm Marcus, the solo developer behind Hardship and I am excited to bring to life my dream game. It still needs quite a bit of work but I am beyond confident that I can bring my vision to reality along side a hopefully growing community!</div>
+                    <a href="https://store.steampowered.com/news/app/1334570/view/564749771124769801" class="blog-post-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                </div>
+                
+            </div>
+            <div class="steam-news-link">
+                <a href="https://store.steampowered.com/news/app/1334570" class="steam-news-button" target="_blank" rel="noopener noreferrer">View More Updates</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-section">
+        <div class="container">
+            <p>This is just the beginning. I have big plans for continued development, community feedback, and meaningful updates as the game grows.</p>
+            <p><strong>Thank you for checking out Hardship, and I hope you enjoy building your own story of resilience, growth, and survival.</strong></p>
+        </div>
+        <br/>
+        <a href="https://store.steampowered.com/app/1334570?utm_source=Website" class="steam-link" target="_blank" rel="noopener noreferrer">
+           Wishlist now on Steam! <i class="fab fa-steam steam-icon" style="padding: 10px;"></i>
+        </a>
+    </section>
+</body>
+</html>
