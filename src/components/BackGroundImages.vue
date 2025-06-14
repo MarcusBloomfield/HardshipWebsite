@@ -22,15 +22,15 @@ onMounted(() => {
 <template>
     <div class="background-image">
         <div class="background-grid" ref="backgroundGridRef">
-            <img src="Pictures/People.PNG" alt="Citizens and People Management">
-            <img src="Pictures/FARMS.PNG" alt="Farming and Agriculture">
-            <img src="Pictures/BuildingCreator.PNG" alt="Building Creation Tool">
-            <img src="Pictures/SomeHouses.PNG" alt="Town Housing">
-            <img src="Pictures/MOOOON.PNG" alt="Night Cycle">
-            <img src="Pictures/Forest.PNG" alt="Forest Environment">
-            <img src="Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
-            <img src="Pictures/Planet.PNG" alt="World View">
-            <img src="Pictures/Mountain.PNG" alt="Mountain Landscape">
+            <img src="/Pictures/People.PNG" alt="Citizens and People Management">
+            <img src="/Pictures/FARMS.PNG" alt="Farming and Agriculture">
+            <img src="/Pictures/BuildingCreator.PNG" alt="Building Creation Tool">
+            <img src="/Pictures/SomeHouses.PNG" alt="Town Housing">
+            <img src="/Pictures/MOOOON.PNG" alt="Night Cycle">
+            <img src="/Pictures/Forest.PNG" alt="Forest Environment">
+            <img src="/Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
+            <img src="/Pictures/Planet.PNG" alt="World View">
+            <img src="/Pictures/Mountain.PNG" alt="Mountain Landscape">
         </div>
     </div>
 </template>

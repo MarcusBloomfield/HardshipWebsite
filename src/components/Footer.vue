@@ -9,7 +9,7 @@
                 <p>Thank you for checking out Hardship</p>
             </div>
             <a href="https://store.steampowered.com/app/1334570?utm_source=Website" class="steam-link" target="_blank" rel="noopener noreferrer">
-                Wishlist now on Steam! <img src="Pictures/Steam_icon_logo.svg.png" alt="Steam" class="steam-icon">
+                Wishlist now on Steam! <img src="/Pictures/Steam_icon_logo.svg.png" alt="Steam" class="steam-icon">
             </a>
         </div>
         <br/>

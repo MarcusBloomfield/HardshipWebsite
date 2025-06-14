@@ -4,63 +4,63 @@
             <h2>Game Screenshots</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="Pictures/People.PNG" alt="Citizens and People Management">
+                    <img src="/Pictures/People.PNG" alt="Citizens and People Management">
                     <div class="overlay">
                         <h4>Citizen Management</h4>
                         <p>Manage your townspeople and their daily needs</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pictures/FARMS.PNG" alt="Farming and Agriculture">
+                    <img src="/Pictures/FARMS.PNG" alt="Farming and Agriculture">
                     <div class="overlay">
                         <h4>Agriculture System</h4>
                         <p>Grow crops to feed your growing settlement</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pictures/SomeHouses.PNG" alt="Town Housing">
+                    <img src="/Pictures/SomeHouses.PNG" alt="Town Housing">
                     <div class="overlay">
                         <h4>Housing Development</h4>
                         <p>Build homes to shelter your citizens</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pictures/BuildingCreator.PNG" alt="Building Creation Tool">
+                    <img src="/Pictures/BuildingCreator.PNG" alt="Building Creation Tool">
                     <div class="overlay">
                         <h4>Building System</h4>
                         <p>Design and construct various structures</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pictures/Forest.PNG" alt="Forest Environment">
+                    <img src="/Pictures/Forest.PNG" alt="Forest Environment">
                     <div class="overlay">
                         <h4>Natural Resources</h4>
                         <p>Gather wood and materials from forests</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pictures/Mountain.PNG" alt="Mountain Landscape">
+                    <img src="/Pictures/Mountain.PNG" alt="Mountain Landscape">
                     <div class="overlay">
                         <h4>Varied Terrain</h4>
                         <p>Explore different landscapes and environments</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
+                    <img src="/Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
                     <div class="overlay">
                         <h4>Scenic Views</h4>
                         <p>Beautiful landscapes surround your settlement</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pictures/Planet.PNG" alt="World View">
+                    <img src="/Pictures/Planet.PNG" alt="World View">
                     <div class="overlay">
                         <h4>World Overview</h4>
                         <p>Plan your expansion across the land</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pictures/MOOOON.PNG" alt="Night Cycle">
+                    <img src="/Pictures/MOOOON.PNG" alt="Night Cycle">
                     <div class="overlay">
                         <h4>Day/Night Cycle</h4>
                         <p>Adapt to changing conditions throughout the day</p>

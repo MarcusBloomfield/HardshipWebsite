@@ -1,8 +1,8 @@
 <template>
      <header class="header">
-        <img src="Pictures/MainCapsule.PNG" alt="Hardship Main Building" class="Headerimg">
+        <img src="/Pictures/MainCapsule.png" alt="Hardship Main Building" class="Headerimg">
         <a href="https://store.steampowered.com/app/1334570?utm_source=Website" class="header-steam-link steam-link" target="_blank" rel="noopener noreferrer">
-            Wishlist now on Steam! <img src="Pictures/Steam_icon_logo.svg.png" alt="Steam" class="steam-icon">
+            Wishlist now on Steam! <img src="/Pictures/Steam_icon_logo.svg.png" alt="Steam" class="steam-icon">
         </a>
     </header>
 </template>
