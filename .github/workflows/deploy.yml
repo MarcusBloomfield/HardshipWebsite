@@ -37,8 +37,8 @@ jobs:
         
       - name: Copy additional files
         run: |
-          cp PrivacyPolicy.md dist/
-          cp License.md dist/
+          cp PrivacyPolicy.md dist/privacypolicy.md
+          cp License.md dist/license.md
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
