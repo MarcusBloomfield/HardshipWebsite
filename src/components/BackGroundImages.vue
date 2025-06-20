@@ -29,7 +29,7 @@ onMounted(() => {
             <img src="/Pictures/MOOOON.PNG" alt="Night Cycle">
             <img src="/Pictures/Forest.PNG" alt="Forest Environment">
             <img src="/Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
-            <img src="/Pictures/Planet.PNG" alt="World View">
+            <img src="/Pictures/ESTATE.PNG" alt="World View">
             <img src="/Pictures/Mountain.PNG" alt="Mountain Landscape">
         </div>
     </div>
