@@ -4,6 +4,13 @@
             <h2>Game Screenshots</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
+                    <img src="/GIFS/RoadPlacement.gif" alt="Grand Estate">
+                    <div class="overlay">
+                        <h4>Dynamic Road Placement</h4>
+                        <p>Build winding roads how ever you would like</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
                     <img src="/Pictures/ESTATE.PNG" alt="Grand Estate">
                     <div class="overlay">
                         <h4>Player Estates</h4>
