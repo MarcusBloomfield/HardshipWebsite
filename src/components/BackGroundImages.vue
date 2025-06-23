@@ -1,36 +1,56 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { ref, reactive } from 'vue'
+import peopleImg from '/Pictures/People.PNG'
+import farmsImg from '/Pictures/FARMS.PNG'
+import buildingCreatorImg from '/Pictures/BuildingCreator.PNG'
+import someHousesImg from '/Pictures/SomeHouses.PNG'
+import moonImg from '/Pictures/MOOOON.PNG'
+import forestImg from '/Pictures/Forest.PNG'
+import forestMountainImg from '/Pictures/ForestMountatin.PNG'
+import estateImg from '/Pictures/ESTATE.PNG'
+import mountainImg from '/Pictures/Mountain.PNG'
 
-const backgroundGridRef = ref(null)
+const backgroundImages = [
+    { src: peopleImg, alt: "Citizens and People Management" },
+    { src: farmsImg, alt: "Farming and Agriculture" },
+    { src: buildingCreatorImg, alt: "Building Creation Tool" },
+    { src: someHousesImg, alt: "Town Housing" },
+    { src: moonImg, alt: "Night Cycle" },
+    { src: forestImg, alt: "Forest Environment" },
+    { src: forestMountainImg, alt: "Forest Mountain View" },
+    { src: estateImg, alt: "World View" },
+    { src: mountainImg, alt: "Mountain Landscape" }
+]
 
-onMounted(() => {
-    if (backgroundGridRef.value) {
-        const backgroundImages = backgroundGridRef.value.querySelectorAll('img')
-        
-        backgroundImages.forEach((image, index) => {
-            image.addEventListener('load', () => {
-                setTimeout(() => {
-                    image.classList.add('loaded', 'fade-in')
-                }, index * 111)
-            })
-        })
-    }
-})
+const imageStates = reactive(
+    backgroundImages.map(() => ({
+        fadeIn: false
+    }))
+)
+
+const handleImageLoad = (index) => {
+    setTimeout(() => {
+        imageStates[index].fadeIn = true
+    }, index * 111)
+}
+
+const getImageClasses = (index) => {
+    return imageStates[index].fadeIn ? 'fade-in' : ''
+}
 </script>
 
 
 <template>
     <div class="background-image">
-        <div class="background-grid" ref="backgroundGridRef">
-            <img src="/Pictures/People.PNG" alt="Citizens and People Management">
-            <img src="/Pictures/FARMS.PNG" alt="Farming and Agriculture">
-            <img src="/Pictures/BuildingCreator.PNG" alt="Building Creation Tool">
-            <img src="/Pictures/SomeHouses.PNG" alt="Town Housing">
-            <img src="/Pictures/MOOOON.PNG" alt="Night Cycle">
-            <img src="/Pictures/Forest.PNG" alt="Forest Environment">
-            <img src="/Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
-            <img src="/Pictures/ESTATE.PNG" alt="World View">
-            <img src="/Pictures/Mountain.PNG" alt="Mountain Landscape">
+        <div class="background-grid">
+            <img 
+                v-for="(image, index) in backgroundImages"
+                :key="index"
+                :src="image.src" 
+                :alt="image.alt"
+                :class="getImageClasses(index)"
+                @load="handleImageLoad(index)"
+            >
         </div>
     </div>
 </template>
@@ -66,16 +86,12 @@ onMounted(() => {
     transition: opacity 1.2s ease-in-out;
 }
 
-.background-grid img.loaded {
-    opacity: 1;
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
     to {
-        opacity: .8;
+        opacity: 1;
     }
 }
 

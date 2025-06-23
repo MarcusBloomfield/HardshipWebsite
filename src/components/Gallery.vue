@@ -1,87 +1,102 @@
+<script setup>
+import roadPlacementGif from '/GIFS/RoadPlacement.gif'
+import estateImg from '/Pictures/ESTATE.PNG'
+import hutsImg from '/Pictures/Huts.PNG'
+import villageImg from '/Pictures/VillageSreenShot.PNG'
+import peopleImg from '/Pictures/People.PNG'
+import farmsImg from '/Pictures/FARMS.PNG'
+import buildingCreatorImg from '/Pictures/BuildingCreator.PNG'
+import mountainImg from '/Pictures/Mountain.PNG'
+import forestMountainImg from '/Pictures/ForestMountatin.PNG'
+import planetImg from '/Pictures/Planet.PNG'
+import moonImg from '/Pictures/MOOOON.PNG'
+import forestImg from '/Pictures/Forest.PNG'
+</script>
+
 <template>
    <section class="gallery-section">
         <div class="container">
             <h2>Game Screenshots</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="/GIFS/RoadPlacement.gif" alt="Grand Estate">
+                    <img :src="roadPlacementGif" alt="Grand Estate">
                     <div class="overlay">
                         <h4>Dynamic Road Placement</h4>
                         <p>Build winding roads how ever you would like</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/ESTATE.PNG" alt="Grand Estate">
+                    <img :src="estateImg" alt="Grand Estate">
                     <div class="overlay">
                         <h4>Player Estates</h4>
                         <p>Build and manage smaller villages split for your main city.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/Huts.PNG" alt="Simple Huts">
+                    <img :src="hutsImg" alt="Simple Huts">
                     <div class="overlay">
                         <h4>Starter Homes</h4>
                         <p>Provide basic shelter for your first citizens.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/VillageSreenShot.PNG" alt="Village Life">
+                    <img :src="villageImg" alt="Village Life">
                     <div class="overlay">
                         <h4>Bustling Village</h4>
                         <p>Watch your small settlement grow into a lively village.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/People.PNG" alt="Citizens and People Management">
+                    <img :src="peopleImg" alt="Citizens and People Management">
                     <div class="overlay">
                         <h4>Citizen Management</h4>
                         <p>Manage your townspeople and their daily needs</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/FARMS.PNG" alt="Farming and Agriculture">
+                    <img :src="farmsImg" alt="Farming and Agriculture">
                     <div class="overlay">
                         <h4>Agriculture System</h4>
                         <p>Grow crops to feed your growing settlement</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/BuildingCreator.PNG" alt="Building Creation Tool">
+                    <img :src="buildingCreatorImg" alt="Building Creation Tool">
                     <div class="overlay">
                         <h4>Building System</h4>
                         <p>Design and construct various structures</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/Mountain.PNG" alt="Mountain Landscape">
+                    <img :src="mountainImg" alt="Mountain Landscape">
                     <div class="overlay">
                         <h4>Varied Terrain</h4>
                         <p>Explore different landscapes and environments</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/ForestMountatin.PNG" alt="Forest Mountain View">
+                    <img :src="forestMountainImg" alt="Forest Mountain View">
                     <div class="overlay">
                         <h4>Scenic Views</h4>
                         <p>Beautiful landscapes surround your settlement</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/Planet.PNG" alt="World View">
+                    <img :src="planetImg" alt="World View">
                     <div class="overlay">
                         <h4>World Overview</h4>
                         <p>Plan your expansion across the land</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/MOOOON.PNG" alt="Night Cycle">
+                    <img :src="moonImg" alt="Night Cycle">
                     <div class="overlay">
                         <h4>Day/Night Cycle</h4>
                         <p>Adapt to changing conditions throughout the day</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/Pictures/Forest.PNG" alt="Forest Environment">
+                    <img :src="forestImg" alt="Forest Environment">
                     <div class="overlay">
                         <h4>Natural Resources</h4>
                         <p>Gather wood and materials from forests</p>
