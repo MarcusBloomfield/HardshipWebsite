@@ -5,12 +5,12 @@ import hutsImg from '/Pictures/Huts.PNG'
 import villageImg from '/Pictures/VillageSreenShot.PNG'
 import peopleImg from '/Pictures/People.PNG'
 import farmsImg from '/Pictures/FARMS.PNG'
-import buildingCreatorImg from '/Pictures/BuildingCreator.PNG'
+import buildingCreator from '/GIFS/BuildingCreator.gif'
 import mountainImg from '/Pictures/Mountain.PNG'
 import forestMountainImg from '/Pictures/ForestMountatin.PNG'
-import planetImg from '/Pictures/Planet.PNG'
-import moonImg from '/Pictures/MOOOON.PNG'
-import forestImg from '/Pictures/Forest.PNG'
+import worldOverview from '/GIFS/WorldOverview.gif'
+import dayNightCycle from '/GIFS/DayNightCycle.gif'
+import naturalResources from '/GIFS/NaturalResources.gif'
 </script>
 
 <template>
@@ -40,6 +40,20 @@ import forestImg from '/Pictures/Forest.PNG'
                     </div>
                 </div>
                 <div class="gallery-item">
+                    <img :src="naturalResources" alt="Forest Environment">
+                    <div class="overlay">
+                        <h4>Natural Resources</h4>
+                        <p>Gather wood and materials from forests</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img :src="dayNightCycle" alt="Night Cycle">
+                    <div class="overlay">
+                        <h4>Day/Night Cycle</h4>
+                        <p>Adapt to changing conditions throughout the day</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
                     <img :src="villageImg" alt="Village Life">
                     <div class="overlay">
                         <h4>Bustling Village</h4>
@@ -54,17 +68,24 @@ import forestImg from '/Pictures/Forest.PNG'
                     </div>
                 </div>
                 <div class="gallery-item">
+                    <img :src="buildingCreator" alt="Building Creation Tool">
+                    <div class="overlay">
+                        <h4>Building System</h4>
+                        <p>Design and construct various structures</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img :src="worldOverview" alt="World View">
+                    <div class="overlay">
+                        <h4>World Overview</h4>
+                        <p>Plan your expansion across the land</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
                     <img :src="farmsImg" alt="Farming and Agriculture">
                     <div class="overlay">
                         <h4>Agriculture System</h4>
                         <p>Grow crops to feed your growing settlement</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img :src="buildingCreatorImg" alt="Building Creation Tool">
-                    <div class="overlay">
-                        <h4>Building System</h4>
-                        <p>Design and construct various structures</p>
                     </div>
                 </div>
                 <div class="gallery-item">
@@ -79,27 +100,6 @@ import forestImg from '/Pictures/Forest.PNG'
                     <div class="overlay">
                         <h4>Scenic Views</h4>
                         <p>Beautiful landscapes surround your settlement</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img :src="planetImg" alt="World View">
-                    <div class="overlay">
-                        <h4>World Overview</h4>
-                        <p>Plan your expansion across the land</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img :src="moonImg" alt="Night Cycle">
-                    <div class="overlay">
-                        <h4>Day/Night Cycle</h4>
-                        <p>Adapt to changing conditions throughout the day</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img :src="forestImg" alt="Forest Environment">
-                    <div class="overlay">
-                        <h4>Natural Resources</h4>
-                        <p>Gather wood and materials from forests</p>
                     </div>
                 </div>
             </div>
