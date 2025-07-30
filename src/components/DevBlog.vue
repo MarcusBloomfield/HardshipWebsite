@@ -5,6 +5,13 @@
         <div class="blog-posts">
 
             <div class="blog-post">
+                <div class="blog-post-date">Wed, July 30, 2025</div>
+                <div class="blog-post-title">Performance, UI and bugs</div>
+                <div class="blog-post-excerpt">I've been hard at work over the past month, focusing mainly on performance optimizations, UI, alongside bug fixing and some refactoring. You should notice a smoother experience, especially when selecting objects and managing your town. I've also optimized the animation system and redesigned the production systems.</div>
+                <a href="https://store.steampowered.com/news/app/1334570/view/509586544670015508" class="blog-post-link" target="_blank" rel="noopener noreferrer">Read More</a>
+            </div>
+
+            <div class="blog-post">
                 <div class="blog-post-date">Wed, June 18, 2025</div>
                 <div class="blog-post-title">Tech, Roads and Buildings!</div>
                 <div class="blog-post-excerpt">I've implemented the first iteration of the road network, these roads are not only visual they boost movement speed and also offer the citizen a more performant path finding allowing the game to run faster and help citizens navigate the world with ease. Additionally there is only one road network system, meaning all roads will be connected and will function as the life line of the city.</div>
